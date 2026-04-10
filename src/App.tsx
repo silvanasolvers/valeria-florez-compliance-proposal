@@ -1,19 +1,19 @@
 import './App.css'
 
-const problemPoints = [
+const riskPoints = [
   'Consultas manuales que consumen tiempo operativo',
   'Fuentes dispersas que reducen claridad al decidir',
   'Riesgo de omitir alertas o hallazgos relevantes',
 ]
 
-const scopePoints = [
+const capabilities = [
   'Consulta de listas restrictivas y fuentes de cumplimiento',
   'Búsqueda por nombre, identificación y criterios clave',
   'Cruce contra listas personalizadas o internas',
   'Visualización clara de alertas, coincidencias y hallazgos',
 ]
 
-const conditionPoints = [
+const conditions = [
   'Primera versión enfocada en velocidad, claridad y facilidad de uso',
   'Base preparada para crecer con nuevas fuentes y reglas de negocio',
   'Gestión mensual orientada a soporte, mantenimiento y evolución',
@@ -23,12 +23,6 @@ const conditionPoints = [
 function HeroMark() {
   return (
     <svg viewBox="0 0 560 560" className="hero-graphic" aria-hidden="true">
-      <defs>
-        <linearGradient id="ring" x1="0%" y1="0%" x2="100%" y2="100%">
-          <stop offset="0%" stopColor="#ffffff" stopOpacity="1" />
-          <stop offset="100%" stopColor="#bdbdbd" stopOpacity="0.35" />
-        </linearGradient>
-      </defs>
       <circle cx="280" cy="280" r="172" className="orbit orbit-1" />
       <circle cx="280" cy="280" r="122" className="orbit orbit-2" />
       <circle cx="280" cy="280" r="70" className="core" />
@@ -36,8 +30,24 @@ function HeroMark() {
       <circle cx="280" cy="118" r="10" className="node node-1" />
       <circle cx="438" cy="280" r="11" className="node node-2" />
       <circle cx="162" cy="388" r="8" className="node node-3" />
-      <circle cx="280" cy="280" r="22" fill="none" stroke="url(#ring)" strokeWidth="3" />
+      <circle cx="280" cy="280" r="22" fill="none" stroke="rgba(255,255,255,0.62)" strokeWidth="3" />
     </svg>
+  )
+}
+
+function ContactBar() {
+  return (
+    <div className="contact-bar">
+      <a className="cta primary" href="https://wa.me/573216424600?text=Hola%20Solvers%2C%20quiero%20avanzar%20con%20la%20propuesta%20de%20Valeria%20Florez">
+        WhatsApp Valentin
+      </a>
+      <a className="cta secondary" href="tel:+573216424600">
+        Llamar Valentin
+      </a>
+      <a className="cta ghost" href="https://wa.me/573119999999?text=Hola%20Tina%2C%20quiero%20revisar%20la%20propuesta%20de%20Valeria%20Florez">
+        WhatsApp Valentina
+      </a>
+    </div>
   )
 }
 
@@ -54,15 +64,7 @@ function App() {
             Una plataforma web diseñada para centralizar consultas, detectar
             alertas relevantes y facilitar decisiones con más seguridad.
           </p>
-
-          <div className="hero-actions">
-            <a className="cta primary" href="https://wa.me/573216424600?text=Hola%20Solvers%2C%20quiero%20avanzar%20con%20la%20propuesta%20de%20Valeria%20Florez">
-              WhatsApp
-            </a>
-            <a className="cta secondary" href="tel:+573216424600">
-              Llamar
-            </a>
-          </div>
+          <ContactBar />
         </div>
 
         <div className="hero-side">
@@ -90,36 +92,41 @@ function App() {
         </div>
       </section>
 
+      <section className="section-card intro-card mono-card">
+        <p className="section-kicker">Global Business Law-style structure</p>
+        <h2>Inteligencia normativa aplicada al flujo operativo de Valeria.</h2>
+        <p className="section-intro">
+          Propuesta tecnológica personalizada para una operación de compliance
+          clara, ágil y con trazabilidad.
+        </p>
+      </section>
+
       <section className="content-grid first-grid">
         <article className="section-card problem-card mono-card">
-          <p className="section-kicker">Problema</p>
+          <p className="section-kicker">El riesgo de la incertidumbre</p>
           <h2>Cuando la consulta es lenta, el riesgo crece.</h2>
           <ul>
-            {problemPoints.map((item) => (
+            {riskPoints.map((item) => (
               <li key={item}>{item}</li>
             ))}
           </ul>
         </article>
 
-        <article className="section-card agitation-card mono-card">
-          <p className="section-kicker">Impacto</p>
-          <h2>La fricción también afecta la decisión.</h2>
+        <article className="section-card solution-card mono-card">
+          <p className="section-kicker">La certeza de la tecnología</p>
+          <h2>Una herramienta propia para consultar, contrastar y decidir.</h2>
           <p>
-            Validar tarde o validar mal impacta la velocidad comercial, la
-            confianza del proceso y la capacidad de actuar con claridad.
+            La propuesta concentra lo esencial en una experiencia limpia,
+            rápida y preparada para crecer.
           </p>
         </article>
       </section>
 
-      <section className="section-card solution-block mono-card">
-        <p className="section-kicker">Solución</p>
-        <h2>Una herramienta propia para consultar, contrastar y decidir.</h2>
-        <p className="section-intro">
-          La propuesta concentra lo esencial en una experiencia limpia, rápida y
-          preparada para crecer.
-        </p>
+      <section className="section-card capability-block mono-card">
+        <p className="section-kicker">Capacidades del sistema</p>
+        <h2>Arquitectura de software para investigación y validación.</h2>
         <div className="scope-grid mono-scope">
-          {scopePoints.map((item) => (
+          {capabilities.map((item) => (
             <div key={item} className="scope-item">
               <span className="scope-dot" />
               <p>{item}</p>
@@ -130,7 +137,7 @@ function App() {
 
       <section className="content-grid second-grid">
         <article className="section-card investment-block mono-card">
-          <p className="section-kicker">Inversión</p>
+          <p className="section-kicker">Inversión tecnológica</p>
           <h2>Estructura clara para avanzar.</h2>
 
           <div className="price-panel large mono-panel">
@@ -141,7 +148,7 @@ function App() {
             <p>Valor especial definido para Valeria Florez.</p>
           </div>
 
-          <div className="price-panel small mono-panel subtle">
+          <div className="price-panel subtle mono-panel">
             <span className="price-label">Gestión mensual</span>
             <div className="price-current compact">$1.500.000 COP</div>
             <p>Soporte, mantenimiento y mejora continua.</p>
@@ -149,10 +156,10 @@ function App() {
         </article>
 
         <article className="section-card conditions-block mono-card">
-          <p className="section-kicker">Condiciones</p>
+          <p className="section-kicker">Seguridad y privacidad</p>
           <h2>Base seria, lista para operación real.</h2>
           <ul>
-            {conditionPoints.map((item) => (
+            {conditions.map((item) => (
               <li key={item}>{item}</li>
             ))}
           </ul>
@@ -161,7 +168,7 @@ function App() {
 
       <section className="section-card closing-block mono-card">
         <div>
-          <p className="section-kicker">Cierre</p>
+          <p className="section-kicker">Siguientes pasos</p>
           <h2>Una propuesta pensada para decidir con rapidez y ejecutar con orden.</h2>
         </div>
         <div className="closing-aside mono-aside">
@@ -170,6 +177,7 @@ function App() {
             Si el objetivo es construir una base sólida para compliance y debida
             diligencia, esta propuesta define un punto de partida claro.
           </p>
+          <ContactBar />
         </div>
       </section>
 
@@ -179,6 +187,7 @@ function App() {
           <span>Valentin Florez Maya</span>
           <span>solvers.solvers@gmail.com</span>
           <span>+57 321 642-4600</span>
+          <span>Valentina Valdés, Tina</span>
         </div>
       </footer>
     </main>
