@@ -12,16 +12,16 @@ const capabilities = [
 
 const processSteps = [
   {
-    label: 'Diagnóstico',
-    text: 'Flujo actual, criterios y fuentes prioritarias.',
+    label: 'Pago único',
+    text: 'Activación del proyecto y arranque operativo.',
   },
   {
     label: 'Configuración',
     text: 'Listas, reglas y estructura de revisión.',
   },
   {
-    label: 'Puesta en marcha',
-    text: 'Entrega operativa con acompañamiento inicial.',
+    label: 'Entrega',
+    text: 'Implementación lista en 15 días después del pago.',
   },
 ]
 
