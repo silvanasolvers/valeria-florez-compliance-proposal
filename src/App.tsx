@@ -1,48 +1,42 @@
 import './App.css'
 
-const painPoints = [
-  'Consultas manuales lentas',
-  'Información dispersa',
-  'Riesgo de omitir alertas clave',
+const problemPoints = [
+  'Consultas manuales que consumen tiempo operativo',
+  'Fuentes dispersas que reducen claridad al decidir',
+  'Mayor riesgo de omitir alertas o hallazgos relevantes',
 ]
 
-const solutionPoints = [
-  'Screening centralizado',
-  'Cruce con listas restrictivas y personalizadas',
-  'Resultados claros para decidir más rápido',
+const scopePoints = [
+  'Consulta de listas restrictivas y fuentes de cumplimiento',
+  'Búsqueda por nombre, identificación y criterios clave',
+  'Cruce contra listas personalizadas o internas',
+  'Visualización clara de alertas, hallazgos y coincidencias',
 ]
 
-function ShieldGraphic() {
+const conditionPoints = [
+  'Primera versión enfocada en velocidad, claridad y facilidad de uso',
+  'Base preparada para crecer con nuevas fuentes y reglas de negocio',
+  'Gestión mensual orientada a soporte, mantenimiento y evolución',
+  'Implementación sobre una aplicación web propia para operación directa',
+]
+
+function OrbitGraphic() {
   return (
-    <svg viewBox="0 0 320 320" className="hero-shield" aria-hidden="true">
+    <svg viewBox="0 0 420 420" className="hero-graphic" aria-hidden="true">
       <defs>
-        <linearGradient id="shieldGlow" x1="0%" y1="0%" x2="100%" y2="100%">
+        <linearGradient id="goldPurple" x1="0%" y1="0%" x2="100%" y2="100%">
           <stop offset="0%" stopColor="#f6d38b" />
           <stop offset="100%" stopColor="#7c5cff" />
         </linearGradient>
       </defs>
-      <circle cx="160" cy="160" r="130" fill="rgba(255,255,255,0.03)" />
-      <path
-        d="M160 52 242 84v63c0 56-34 101-82 122-48-21-82-66-82-122V84l82-32Z"
-        fill="url(#shieldGlow)"
-        opacity="0.18"
-      />
-      <path
-        d="M160 68 228 95v52c0 46-27 83-68 103-41-20-68-57-68-103V95l68-27Z"
-        fill="none"
-        stroke="url(#shieldGlow)"
-        strokeWidth="6"
-      />
-      <path
-        d="m130 160 20 20 42-48"
-        fill="none"
-        stroke="#f6d38b"
-        strokeWidth="10"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-      <circle cx="248" cy="92" r="18" fill="#7c5cff" opacity="0.9" />
-      <circle cx="86" cy="228" r="10" fill="#f6d38b" opacity="0.9" />
+      <circle cx="210" cy="210" r="148" fill="none" stroke="rgba(255,255,255,0.08)" strokeWidth="1" />
+      <circle cx="210" cy="210" r="104" fill="none" stroke="rgba(255,255,255,0.08)" strokeWidth="1" />
+      <circle cx="210" cy="210" r="58" fill="url(#goldPurple)" opacity="0.18" />
+      <circle cx="210" cy="210" r="34" fill="none" stroke="url(#goldPurple)" strokeWidth="4" />
+      <circle cx="210" cy="106" r="10" fill="#f6d38b" />
+      <circle cx="320" cy="210" r="11" fill="#7c5cff" />
+      <circle cx="110" cy="280" r="8" fill="#ff7a7a" />
+      <path d="M210 140v46h44" fill="none" stroke="#f6d38b" strokeWidth="6" strokeLinecap="round" />
     </svg>
   )
 }
@@ -50,104 +44,134 @@ function ShieldGraphic() {
 function App() {
   return (
     <main className="page">
-      <section className="hero">
-        <div className="hero-copy-block">
-          <div className="eyebrow">SOLVERSAI · PROPUESTA COMPLIANCE</div>
+      <section className="hero enterprise">
+        <div className="hero-main">
+          <div className="eyebrow">SOLVERS · PROPUESTA EMPRESARIAL</div>
           <h1>
-            Menos riesgo. <span>Más claridad.</span> Más velocidad para decidir.
+            Sistema de compliance para <span>Valeria Florez</span>
           </h1>
           <p className="hero-copy">
-            Una plataforma para Valeria Florez que convierte búsquedas de
-            compliance en una operación simple, visual y confiable.
+            Una plataforma web diseñada para centralizar consultas, detectar
+            alertas relevantes y facilitar decisiones con más seguridad.
           </p>
 
-          <div className="hero-pills">
-            <span>Listas restrictivas</span>
-            <span>Listas personalizadas</span>
-            <span>Due diligence</span>
+          <div className="hero-tags">
+            <span>Compliance</span>
+            <span>Screening</span>
+            <span>Debida diligencia</span>
           </div>
         </div>
 
-        <div className="hero-visual">
-          <ShieldGraphic />
-          <div className="signal-card alert-card">
-            <strong>Problema</strong>
-            <p>Hoy el riesgo se esconde entre fuentes dispersas y procesos lentos.</p>
-          </div>
-          <div className="signal-card solution-card">
-            <strong>Solución</strong>
-            <p>Un solo sistema para consultar, detectar y decidir con confianza.</p>
+        <div className="hero-side">
+          <OrbitGraphic />
+          <div className="hero-side-card">
+            <strong>Propuesta Solvers</strong>
+            <p>
+              Más control, menos fricción operativa y una experiencia clara para
+              revisar riesgo.
+            </p>
           </div>
         </div>
       </section>
 
-      <section className="pas-grid">
-        <article className="pas-card problem">
-          <p className="section-kicker">P</p>
-          <h2>El problema</h2>
+      <section className="summary-strip">
+        <div className="summary-card featured">
+          <span className="summary-label">Inversión especial</span>
+          <strong>$5.000.000 COP</strong>
+          <p>Desarrollo de la primera versión</p>
+        </div>
+        <div className="summary-card">
+          <span className="summary-label">Valor base</span>
+          <strong>$8.000.000 COP</strong>
+          <p>Antes de precio especial</p>
+        </div>
+        <div className="summary-card">
+          <span className="summary-label">Gestión mensual</span>
+          <strong>$1.500.000 COP</strong>
+          <p>Soporte y evolución continua</p>
+        </div>
+      </section>
+
+      <section className="content-grid first-grid">
+        <article className="section-card problem-card">
+          <p className="section-kicker">Problema</p>
+          <h2>Cuando la consulta es lenta, el riesgo crece.</h2>
           <ul>
-            {painPoints.map((item) => (
+            {problemPoints.map((item) => (
               <li key={item}>{item}</li>
             ))}
           </ul>
         </article>
 
-        <article className="pas-card agitation">
-          <p className="section-kicker">A</p>
-          <h2>Lo que eso cuesta</h2>
+        <article className="section-card agitation-card">
+          <p className="section-kicker">Impacto</p>
+          <h2>La fricción operativa también cuesta.</h2>
           <p>
-            Cada validación lenta retrasa decisiones, desgasta al equipo y deja
-            espacio para errores que pueden salir caros.
+            Validar tarde o validar mal afecta la velocidad comercial, la
+            confianza del proceso y la capacidad de actuar con criterio.
           </p>
-        </article>
-
-        <article className="pas-card solution">
-          <p className="section-kicker">S</p>
-          <h2>La solución</h2>
-          <ul>
-            {solutionPoints.map((item) => (
-              <li key={item}>{item}</li>
-            ))}
-          </ul>
         </article>
       </section>
 
-      <section className="investment-band">
-        <div className="investment-copy">
+      <section className="section-card solution-block">
+        <p className="section-kicker">Solución</p>
+        <h2>Una herramienta propia para consultar, contrastar y decidir.</h2>
+        <p className="section-intro">
+          La propuesta concentra lo esencial en una experiencia limpia, rápida y
+          preparada para crecer.
+        </p>
+        <div className="scope-grid">
+          {scopePoints.map((item) => (
+            <div key={item} className="scope-item">
+              <span className="scope-dot" />
+              <p>{item}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section className="content-grid second-grid">
+        <article className="section-card investment-block">
           <p className="section-kicker">Inversión</p>
-          <h2>Oferta directa y clara</h2>
-          <p>
-            Diseñada para cerrar rápido, lanzar una primera versión funcional y
-            seguir iterando sobre una base propia.
-          </p>
-        </div>
+          <h2>Estructura clara para avanzar.</h2>
 
-        <div className="investment-card featured">
-          <span className="mini-label">Desarrollo</span>
-          <div className="price-row">
-            <span className="price-original">$8.000.000</span>
-            <span className="price-current">$5.000.000 COP</span>
+          <div className="price-panel large">
+            <span className="price-label">Desarrollo</span>
+            <div className="price-stack">
+              <span className="price-original">$8.000.000 COP</span>
+              <span className="price-current">$5.000.000 COP</span>
+            </div>
+            <p>Valor especial definido para Valeria Florez.</p>
           </div>
-          <p>Precio especial para Valeria Florez.</p>
-        </div>
 
-        <div className="investment-card">
-          <span className="mini-label">Gestión mensual</span>
-          <div className="price-current small">$1.500.000 COP</div>
-          <p>Soporte, mantenimiento y mejora continua.</p>
-        </div>
+          <div className="price-panel small">
+            <span className="price-label">Gestión mensual</span>
+            <div className="price-current compact">$1.500.000 COP</div>
+            <p>Soporte, mantenimiento y mejora continua.</p>
+          </div>
+        </article>
+
+        <article className="section-card conditions-block">
+          <p className="section-kicker">Condiciones</p>
+          <h2>Base seria, lista para operación real.</h2>
+          <ul>
+            {conditionPoints.map((item) => (
+              <li key={item}>{item}</li>
+            ))}
+          </ul>
+        </article>
       </section>
 
-      <section className="final-cta">
+      <section className="section-card closing-block">
         <div>
-          <p className="section-kicker">Resultado esperado</p>
-          <h2>Una herramienta que transmite control, confianza y criterio.</h2>
+          <p className="section-kicker">Cierre</p>
+          <h2>Una propuesta pensada para decidir con rapidez y ejecutar con orden.</h2>
         </div>
-        <div className="cta-box">
-          <div className="cta-line" />
+        <div className="closing-aside">
+          <div className="closing-line" />
           <p>
-            Si el objetivo es tomar decisiones con más seguridad y menos fricción,
-            esta es la base correcta para empezar.
+            Si el objetivo es tener una base sólida para compliance y due
+            diligence, esta propuesta ya define el camino inicial correcto.
           </p>
         </div>
       </section>
