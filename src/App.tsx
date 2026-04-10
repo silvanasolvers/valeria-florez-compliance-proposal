@@ -222,7 +222,7 @@ export default function App() {
                 <p className="contact-kicker">Gestión del proyecto</p>
                 <span className="contact-badge">Coordinación</span>
               </div>
-              <h3>Valentina Valdez Pineda</h3>
+              <h3>Valentina Valdes Pineda</h3>
               <p className="contact-role">Project Manager</p>
               <div className="contact-meta">
                 <a href="mailto:valentina@solversai.com">valentina@solversai.com</a>
