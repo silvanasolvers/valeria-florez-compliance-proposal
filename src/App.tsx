@@ -1,28 +1,16 @@
+import { useMemo, useRef, useState } from 'react'
+import html2canvas from 'html2canvas'
+import { jsPDF } from 'jspdf'
 import './App.css'
 
-const cards = [
-  {
-    title: 'El riesgo de la incertidumbre',
-    text: 'Cuando la consulta es manual o dispersa, el proceso se vuelve lento y deja espacio para errores.',
-  },
-  {
-    title: 'La certeza de la tecnología',
-    text: 'Un sistema propio para consultar, contrastar y decidir con claridad en un solo flujo.',
-  },
-  {
-    title: 'Capacidades del sistema',
-    text: 'Búsqueda por nombre o identificación, cruce con listas personalizadas, alertas y hallazgos.',
-  },
-]
-
-const details = [
+const reportItems = [
   'Consulta de listas restrictivas y fuentes de cumplimiento',
   'Búsqueda por nombre, identificación y criterios clave',
   'Cruce contra listas internas o personalizadas',
   'Visualización clara de coincidencias y alertas',
 ]
 
-const steps = [
+const capabilityItems = [
   'Primera versión enfocada en velocidad y claridad',
   'Base lista para crecer con nuevas fuentes y reglas',
   'Gestión mensual para soporte, mantenimiento y evolución',
@@ -58,8 +46,45 @@ function CTA() {
 }
 
 export default function App() {
+  const reportRef = useRef<HTMLDivElement | null>(null)
+  const [pdfBusy, setPdfBusy] = useState(false)
+
+  const sections = useMemo(
+    () => [
+      {
+        title: 'El riesgo de la incertidumbre',
+        text: 'Cuando la consulta es manual o dispersa, el proceso se vuelve lento y deja espacio para errores.',
+      },
+      {
+        title: 'La certeza de la tecnología',
+        text: 'Un sistema propio para consultar, contrastar y decidir con claridad en un solo flujo.',
+      },
+    ],
+    [],
+  )
+
+  const downloadPdf = async () => {
+    if (!reportRef.current || pdfBusy) return
+    setPdfBusy(true)
+    try {
+      const canvas = await html2canvas(reportRef.current, {
+        scale: Math.min(window.devicePixelRatio || 1, 2),
+        backgroundColor: '#080808',
+        useCORS: true,
+      })
+      const imgData = canvas.toDataURL('image/png')
+      const pdf = new jsPDF('p', 'mm', 'a4')
+      const pageWidth = pdf.internal.pageSize.getWidth()
+      const pageHeight = (canvas.height * pageWidth) / canvas.width
+      pdf.addImage(imgData, 'PNG', 0, 0, pageWidth, pageHeight)
+      pdf.save('valeria-florez-propuesta.pdf')
+    } finally {
+      setPdfBusy(false)
+    }
+  }
+
   return (
-    <main className="page">
+    <main className="page" ref={reportRef}>
       <section className="hero">
         <div className="hero-copy">
           <div className="eyebrow">SOLVERS · PROPUESTA EMPRESARIAL</div>
@@ -69,6 +94,11 @@ export default function App() {
             facilitar decisiones con más seguridad.
           </p>
           <CTA />
+          <div className="report-actions">
+            <button className="btn report" onClick={downloadPdf} disabled={pdfBusy}>
+              {pdfBusy ? 'Generando PDF...' : 'Descargar PDF'}
+            </button>
+          </div>
         </div>
         <div className="hero-art">
           <HeroGraphic />
@@ -93,7 +123,7 @@ export default function App() {
       </section>
 
       <section className="grid">
-        {cards.map((card) => (
+        {sections.map((card) => (
           <article key={card.title} className="panel">
             <p className="label">{card.title}</p>
             <p>{card.text}</p>
@@ -104,7 +134,7 @@ export default function App() {
       <section className="panel large">
         <p className="label">Capacidades del sistema</p>
         <div className="list-grid">
-          {details.map((item) => (
+          {reportItems.map((item) => (
             <div key={item} className="list-item">
               <span />
               <p>{item}</p>
@@ -116,7 +146,7 @@ export default function App() {
       <section className="panel large">
         <p className="label">Condiciones</p>
         <div className="list-grid">
-          {steps.map((item) => (
+          {capabilityItems.map((item) => (
             <div key={item} className="list-item">
               <span />
               <p>{item}</p>

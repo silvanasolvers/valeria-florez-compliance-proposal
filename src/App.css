@@ -50,9 +50,11 @@ h1 {
   display:inline-flex; align-items:center; justify-content:center;
   padding:13px 16px; border-radius:999px; text-decoration:none;
   color:#fff; border:1px solid var(--line); font-weight:600; font-size:.95rem;
+  background: rgba(255,255,255,.02);
 }
 .btn.primary { background:#fff; color:#111; }
-.btn.secondary, .btn.tertiary { background:rgba(255,255,255,.02); }
+.btn.report { cursor: pointer; }
+.btn:disabled { opacity: .65; cursor: progress; }
 .hero-art { display:grid; gap:18px; justify-items:center; }
 .hero-graphic { width:min(100%, 340px); animation: float 7s ease-in-out infinite; }
 .ring { fill:none; stroke:rgba(255,255,255,.12); }
@@ -64,12 +66,13 @@ h1 {
 .dot-2 { animation-delay:.6s; }
 .dot-3 { animation-delay:1.2s; }
 .side-note { max-width: 310px; padding:18px 20px; border-radius:20px; border:1px solid var(--line); background: rgba(255,255,255,.03); color: var(--soft); }
+.report-actions { margin-top: 12px; }
 .summary { display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-top:22px; }
 .price-card { padding:22px; }
 .price-card strong { display:block; margin-top:10px; font-size:clamp(1.5rem, 3vw, 2.2rem); line-height:1; }
 .price-card small { display:block; margin-top:8px; color:var(--soft); }
 .price-card.highlight { background: rgba(255,255,255,.05); }
-.grid { display:grid; grid-template-columns:repeat(3, minmax(0,1fr)); gap:18px; margin-top:22px; }
+.grid { display:grid; grid-template-columns:repeat(2, minmax(0,1fr)); gap:18px; margin-top:22px; }
 .panel { padding:28px; }
 .panel.large { margin-top:22px; }
 .panel p { color: var(--soft); }
@@ -91,4 +94,5 @@ h1 {
   .page { width:min(100% - 20px, 1120px); padding:20px 0 48px; }
   .hero, .panel, .price-card, .footer { padding:22px; border-radius:20px; }
   h1 { font-size:2.7rem; }
+  .footer p { word-break: break-word; }
 }
