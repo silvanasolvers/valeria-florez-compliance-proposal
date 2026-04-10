@@ -31,20 +31,6 @@ function HeroGraphic() {
   )
 }
 
-function CTA() {
-  return (
-    <div className="cta-row">
-      <a className="btn primary" href="https://wa.me/573216424600?text=Hola%20Solvers%2C%20quiero%20avanzar%20con%20la%20propuesta%20de%20Valeria%20Florez">
-        WhatsApp Valentin
-      </a>
-      <a className="btn secondary" href="tel:+573216424600">Llamar Valentin</a>
-      <a className="btn tertiary" href="https://wa.me/573119999999?text=Hola%20Tina%2C%20quiero%20revisar%20la%20propuesta%20de%20Valeria%20Florez">
-        WhatsApp Valentina
-      </a>
-    </div>
-  )
-}
-
 export default function App() {
   const reportRef = useRef<HTMLDivElement | null>(null)
   const [pdfBusy, setPdfBusy] = useState(false)
@@ -93,8 +79,7 @@ export default function App() {
             Plataforma web para centralizar consultas, detectar alertas relevantes y
             facilitar decisiones con más seguridad.
           </p>
-          <CTA />
-          <div className="report-actions">
+          <div className="hero-actions">
             <button className="btn report" onClick={downloadPdf} disabled={pdfBusy}>
               {pdfBusy ? 'Generando PDF...' : 'Descargar PDF'}
             </button>
@@ -115,10 +100,18 @@ export default function App() {
           <strong>$5.000.000 COP</strong>
           <small>Precio especial sobre valor base de $8.000.000 COP</small>
         </div>
-        <div className="price-card">
-          <span>Gestión mensual</span>
-          <strong>$1.500.000 COP</strong>
-          <small>Soporte, mantenimiento y evolución continua</small>
+      </section>
+
+      <section className="cta-panel panel large">
+        <p className="label">Contacto</p>
+        <div className="cta-grid">
+          <a className="btn primary" href="https://wa.me/573216424600?text=Hola%20Solvers%2C%20quiero%20avanzar%20con%20la%20propuesta%20de%20Valeria%20Florez">
+            WhatsApp Valentin
+          </a>
+          <a className="btn secondary" href="tel:+573216424600">Llamar Valentin</a>
+          <a className="btn tertiary" href="https://wa.me/573119999999?text=Hola%20Tina%2C%20quiero%20revisar%20la%20propuesta%20de%20Valeria%20Florez">
+            WhatsApp Valentina
+          </a>
         </div>
       </section>
 
@@ -165,7 +158,6 @@ export default function App() {
             Si el objetivo es construir una base sólida para compliance y debida
             diligencia, esta propuesta define un punto de partida claro.
           </p>
-          <CTA />
         </div>
       </section>
 
