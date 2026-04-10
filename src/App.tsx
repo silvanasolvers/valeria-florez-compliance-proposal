@@ -4,25 +4,31 @@ const whatsappHref =
   'https://wa.me/573216424600?text=Hola%20Solvers%2C%20quiero%20avanzar%20con%20la%20propuesta%20de%20Valeria%20Florez'
 
 const capabilities = [
-  'Listas restrictivas y búsquedas por nombre o identificación',
-  'Listas personalizadas para reglas internas de control',
-  'Resultados, hallazgos y alertas para revisión ágil',
-  'Reportes claros para seguimiento y trazabilidad',
+  'Búsqueda centralizada en listas y fuentes clave',
+  'Reglas internas para revisión y alertas',
+  'Hallazgos claros para decidir más rápido',
+  'Trazabilidad simple para seguimiento',
 ]
 
 const processSteps = [
   {
-    label: 'Diagnóstico inicial',
-    text: 'Levantamiento del flujo actual, criterios de validación y fuentes prioritarias.',
+    label: 'Diagnóstico',
+    text: 'Flujo actual, criterios y fuentes prioritarias.',
   },
   {
-    label: 'Configuración y lógica',
-    text: 'Parametrización de listas, reglas internas y estructura de revisión para el equipo.',
+    label: 'Configuración',
+    text: 'Listas, reglas y estructura de revisión.',
   },
   {
-    label: 'Entrega operativa',
-    text: 'Puesta en marcha del sistema con seguimiento, trazabilidad y soporte de adopción.',
+    label: 'Puesta en marcha',
+    text: 'Entrega operativa con acompañamiento inicial.',
   },
+]
+
+const scopeItems = [
+  ['Formato', 'Plataforma web privada'],
+  ['Objetivo', 'Consultar, contrastar y revisar en un solo lugar'],
+  ['Resultado', 'Más control para decisiones de compliance'],
 ]
 
 export default function App() {
@@ -32,23 +38,21 @@ export default function App() {
         <div className="hero-copy">
           <div className="hero-topline">
             <div className="brand">SOLVERS</div>
-            <div className="hero-meta">Propuesta ejecutiva · Compliance y debida diligencia</div>
+            <div className="hero-meta">Propuesta ejecutiva · Compliance</div>
           </div>
 
           <p className="eyebrow">Propuesta comercial</p>
-          <h1>Sistema de Compliance para Valeria Florez</h1>
-          <p className="subtitle">
-            Plataforma web para centralizar consultas, contrastar listas y tomar decisiones con más seguridad.
-          </p>
+          <h1>Compliance claro, sobrio y listo para operar.</h1>
+          <p className="subtitle">Una plataforma a la medida para consultar, contrastar y revisar con criterio.</p>
 
           <div className="hero-summary">
             <div>
               <span>Enfoque</span>
-              <strong>Control, trazabilidad y criterio de revisión</strong>
+              <strong>Control y trazabilidad</strong>
             </div>
             <div>
               <span>Modalidad</span>
-              <strong>Desarrollo e implementación a la medida</strong>
+              <strong>Desarrollo e implementación</strong>
             </div>
           </div>
         </div>
@@ -62,7 +66,7 @@ export default function App() {
             <div className="art-node art-node-main" />
             <div className="art-line art-line-bottom" />
             <div className="art-node art-node-bottom" />
-            <div className="art-caption">Arquitectura sobria para una operación más confiable</div>
+            <div className="art-caption">Un flujo más claro para revisar mejor.</div>
           </div>
         </div>
       </header>
@@ -71,12 +75,9 @@ export default function App() {
         <div className="proposal-intro section-divider">
           <div className="section-heading">
             <p className="label">Resumen ejecutivo</p>
-            <h2>Una propuesta diseñada para revisar mejor, decidir con más respaldo y operar con menos fricción.</h2>
+            <h2>Una operación más ordenada para decidir con más respaldo.</h2>
           </div>
-          <p>
-            La estructura prioriza claridad operativa, control sobre los hallazgos y una experiencia de uso pensada para
-            consultas recurrentes sin dispersión.
-          </p>
+          <p>Menos dispersión, más criterio y una experiencia lista para el uso diario.</p>
         </div>
 
         <div className="content-grid">
@@ -85,12 +86,9 @@ export default function App() {
               <div className="section-heading split-heading">
                 <div>
                   <p className="label">Problema</p>
-                  <h3>Hoy el riesgo no siempre está en la falta de información, sino en la falta de estructura.</h3>
+                  <h3>La revisión pierde fuerza cuando la información está dispersa.</h3>
                 </div>
-                <p>
-                  Las consultas manuales, dispersas y poco trazables ralentizan la operación y elevan el riesgo de pasar
-                  por alto alertas relevantes.
-                </p>
+                <p>Las consultas manuales y poco trazables hacen más lenta la validación y debilitan el control.</p>
               </div>
             </article>
 
@@ -98,12 +96,9 @@ export default function App() {
               <div className="section-heading split-heading">
                 <div>
                   <p className="label">Solución</p>
-                  <h3>Un sistema propio para concentrar búsquedas, contrastes y revisión en un solo flujo.</h3>
+                  <h3>Un sistema propio para buscar, contrastar y revisar en un solo flujo.</h3>
                 </div>
-                <p>
-                  Un sistema propio para buscar, contrastar y revisar hallazgos en un solo flujo, con más control y
-                  mejor criterio de decisión.
-                </p>
+                <p>La propuesta concentra fuentes, reglas y hallazgos en una estructura simple de operar.</p>
               </div>
             </article>
 
@@ -111,7 +106,7 @@ export default function App() {
               <div className="section-heading compact-heading">
                 <div>
                   <p className="label">Capacidades</p>
-                  <h3>Funciones clave para una operación más consistente y confiable.</h3>
+                  <h3>Lo esencial para una operación consistente.</h3>
                 </div>
               </div>
 
@@ -125,11 +120,32 @@ export default function App() {
               </div>
             </article>
 
+            <article className="section-card section-divider">
+              <div className="section-heading compact-heading">
+                <div>
+                  <p className="label">Implementación</p>
+                  <h3>Tres etapas. Una ruta clara.</h3>
+                </div>
+              </div>
+
+              <div className="process-list process-list-inline">
+                {processSteps.map((step, index) => (
+                  <div className="process-item" key={step.label}>
+                    <span>{index + 1}</span>
+                    <div>
+                      <strong>{step.label}</strong>
+                      <p>{step.text}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </article>
+
             <article className="investment section-card section-divider">
               <div className="section-heading compact-heading">
                 <div>
                   <p className="label">Inversión</p>
-                  <h3>Una estructura simple para aprobar, iniciar y acompañar el proyecto.</h3>
+                  <h3>Una estructura simple para iniciar.</h3>
                 </div>
               </div>
 
@@ -139,14 +155,14 @@ export default function App() {
                   <div className="amount">
                     $5.000.000 <small>COP</small>
                   </div>
-                  <div className="note">Implementación base del sistema propuesto</div>
+                  <div className="note">Implementación base del sistema</div>
                 </div>
                 <div className="investment-card">
                   <div className="investment-label">Gestión mensual</div>
                   <div className="amount muted">
                     $1.500.000 <small>COP</small>
                   </div>
-                  <div className="note">Acompañamiento operativo y evolución continua</div>
+                  <div className="note">Acompañamiento y evolución continua</div>
                 </div>
               </div>
               <p className="base-note">Valor base de referencia: $8.000.000 COP.</p>
@@ -155,7 +171,7 @@ export default function App() {
             <article className="cta-panel section-card">
               <div>
                 <p className="label">Siguiente paso</p>
-                <h3>Si la propuesta está alineada, podemos avanzar de inmediato con la validación final.</h3>
+                <h3>Si está alineada, avanzamos con la validación final.</h3>
               </div>
               <a className="btn-main" href={whatsappHref}>
                 Aceptar propuesta
@@ -164,35 +180,14 @@ export default function App() {
           </div>
 
           <aside className="content-rail">
-            <article className="rail-card">
-              <p className="label">Presentación</p>
-              <h3>Alcance planteado</h3>
+            <article className="rail-card rail-card-sticky">
+              <p className="label">Alcance</p>
+              <h3>Qué se propone</h3>
               <div className="rail-list">
-                <div>
-                  <span>Tipo de solución</span>
-                  <strong>Plataforma web privada</strong>
-                </div>
-                <div>
-                  <span>Objetivo</span>
-                  <strong>Consulta, contraste y revisión centralizada</strong>
-                </div>
-                <div>
-                  <span>Resultado esperado</span>
-                  <strong>Mayor control en decisiones de compliance</strong>
-                </div>
-              </div>
-            </article>
-
-            <article className="rail-card">
-              <p className="label">Proceso propuesto</p>
-              <div className="process-list">
-                {processSteps.map((step, index) => (
-                  <div className="process-item" key={step.label}>
-                    <span>{index + 1}</span>
-                    <div>
-                      <strong>{step.label}</strong>
-                      <p>{step.text}</p>
-                    </div>
+                {scopeItems.map(([label, value]) => (
+                  <div key={label}>
+                    <span>{label}</span>
+                    <strong>{value}</strong>
                   </div>
                 ))}
               </div>
@@ -205,18 +200,14 @@ export default function App() {
         <div className="contact-shell">
           <div className="contact-section-header">
             <p className="label">Contacto</p>
-            <h2 id="contacto-title">Acompañamiento cercano para la decisión y la ejecución.</h2>
-            <p className="contact-intro">
-              Si deseas avanzar o revisar detalles finales, puedes escribirnos directamente. Te acompañaremos en la
-              validación comercial, operativa y de implementación.
-            </p>
+            <h2 id="contacto-title">Acompañamiento directo para decidir y ejecutar.</h2>
           </div>
 
           <div className="contact-grid">
             <article className="contact-card">
               <div className="contact-card-top">
                 <p className="contact-kicker">Dirección de propuesta</p>
-                <span className="contact-badge">Contacto principal</span>
+                <span className="contact-badge">Principal</span>
               </div>
               <h3>Valentin Florez Maya</h3>
               <p className="contact-role">Innovación y Desarrollo</p>
