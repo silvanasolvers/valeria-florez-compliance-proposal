@@ -1,62 +1,89 @@
 import './App.css'
 
+const whatsappHref =
+  'https://wa.me/573216424600?text=Hola%20Solvers%2C%20quiero%20avanzar%20con%20la%20propuesta%20de%20Valeria%20Florez'
+
 export default function App() {
   return (
     <main className="page">
       <header className="hero">
-        <div className="logo">S O L V E R S</div>
-        <h1>Propuesta de Compliance para <span>Valeria Florez</span></h1>
-        <p className="subtitle">Sistemas de debida diligencia y mitigación de riesgos operativos.</p>
+        <div className="brand">SOLVERS</div>
+
+        <div className="hero-copy">
+          <p className="eyebrow">Propuesta comercial</p>
+          <h1>Sistema de Compliance para Valeria Florez</h1>
+          <p className="subtitle">
+            Plataforma web para centralizar consultas, contrastar listas y tomar decisiones con más seguridad.
+          </p>
+        </div>
+
+        <div className="hero-art" aria-hidden="true">
+          <div className="art-frame">
+            <div className="art-line art-line-top" />
+            <div className="art-node" />
+            <div className="art-line art-line-bottom" />
+          </div>
+        </div>
       </header>
 
       <section className="content">
-        <div className="section">
-          <div className="label">EL PROBLEMA</div>
-          <p>Consultas manuales y fuentes dispersas generan lentitud operativa y riesgo de omitir alertas críticas.</p>
+        <div className="section section-text">
+          <div className="label">Problema</div>
+          <p>
+            Las consultas manuales, dispersas y poco trazables ralentizan la operación y elevan el riesgo de pasar
+            por alto alertas relevantes.
+          </p>
+        </div>
+
+        <div className="section section-text">
+          <div className="label">Solución</div>
+          <p>
+            Un sistema propio para buscar, contrastar y revisar hallazgos en un solo flujo, con más control y mejor
+            criterio de decisión.
+          </p>
         </div>
 
         <div className="section">
-          <div className="label">LA SOLUCIÓN</div>
-          <p>Una plataforma propia para centralizar la búsqueda, contrastar listas restrictivas y decidir con certeza técnica.</p>
-        </div>
-
-        <div className="section">
-          <div className="label">CAPACIDADES</div>
+          <div className="label">Capacidades</div>
           <ul className="list">
-            <li>Consulta de listas restrictivas internacionales</li>
-            <li>Cruce contra bases de datos personalizadas</li>
-            <li>Búsqueda precisa por nombre e identificación</li>
-            <li>Soporte y evolución continua del sistema</li>
+            <li>Listas restrictivas y búsquedas por nombre o identificación</li>
+            <li>Listas personalizadas para reglas internas de control</li>
+            <li>Resultados, hallazgos y alertas para revisión ágil</li>
+            <li>Reportes claros para seguimiento y trazabilidad</li>
           </ul>
         </div>
 
-        <div className="pricing">
-          <div className="price-block">
-            <div className="label">Inversión Desarrollo</div>
-            <div className="amount">$5.000.000 <small>COP</small></div>
-            <div className="note">Precio especial sobre valor base de $8M</div>
+        <div className="investment">
+          <div className="label">Inversión</div>
+          <div className="investment-grid">
+            <div>
+              <div className="amount">$5.000.000 <small>COP</small></div>
+              <div className="note">Desarrollo</div>
+            </div>
+            <div>
+              <div className="amount muted">$1.500.000 <small>COP</small></div>
+              <div className="note">Gestión mensual</div>
+            </div>
           </div>
-          <div className="price-block">
-            <div className="label">Gestión Mensual</div>
-            <div className="amount">$1.500.000 <small>COP</small></div>
-            <div className="note">Mantenimiento y soporte técnico</div>
-          </div>
+          <p className="base-note">Valor base de referencia: $8.000.000 COP.</p>
         </div>
 
         <div className="cta-group">
-          <a className="btn-main" href="https://wa.me/573216424600?text=Hola%20Solvers%2C%20quiero%20avanzar%20con%20la%20propuesta%20de%20Valeria%20Florez">
-            Aceptar Propuesta
+          <a className="btn-main" href={whatsappHref}>
+            Aceptar propuesta
           </a>
           <div className="contact-links">
-            <a href="tel:+573216424600">Llamar Valentin</a>
-            <span className="sep">/</span>
-            <a href="https://wa.me/573119999999?text=Hola%20Tina%2C%20quiero%20revisar%20la%20propuesta%20de%20Valeria%20Florez">WhatsApp Valentina</a>
+            <a href="tel:+573216424600">Llamar a Valentin</a>
+            <span className="sep">·</span>
+            <a href="https://wa.me/573216424600?text=Hola%20Tina%2C%20quiero%20revisar%20la%20propuesta%20de%20Valeria%20Florez">
+              WhatsApp Tina
+            </a>
           </div>
         </div>
       </section>
 
       <footer className="footer">
-        <p>© 2026 Solvers AI · Valentin Florez Maya · solvers.solvers@gmail.com</p>
+        <p>Valentin Florez Maya · solvers.solvers@gmail.com · +57 321 642 4600</p>
       </footer>
     </main>
   )
