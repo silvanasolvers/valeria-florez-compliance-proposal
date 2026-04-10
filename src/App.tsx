@@ -1,105 +1,155 @@
 import './App.css'
 
-const features = [
-  'Consulta de listas restrictivas y bases de cumplimiento',
-  'Búsqueda por nombre, identificación y criterios personalizados',
-  'Cruce contra listas internas o privadas del cliente',
-  'Validación de antecedentes, alertas y hallazgos relevantes',
+const painPoints = [
+  'Consultas manuales lentas',
+  'Información dispersa',
+  'Riesgo de omitir alertas clave',
 ]
 
-const deliverables = [
-  'Aplicación web en React, rápida y fácil de usar',
-  'Motor de consulta centralizado para due diligence',
-  'Interfaz clara para screening y revisión de resultados',
-  'Base lista para crecer con nuevas fuentes y reglas',
+const solutionPoints = [
+  'Screening centralizado',
+  'Cruce con listas restrictivas y personalizadas',
+  'Resultados claros para decidir más rápido',
 ]
+
+function ShieldGraphic() {
+  return (
+    <svg viewBox="0 0 320 320" className="hero-shield" aria-hidden="true">
+      <defs>
+        <linearGradient id="shieldGlow" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stopColor="#f6d38b" />
+          <stop offset="100%" stopColor="#7c5cff" />
+        </linearGradient>
+      </defs>
+      <circle cx="160" cy="160" r="130" fill="rgba(255,255,255,0.03)" />
+      <path
+        d="M160 52 242 84v63c0 56-34 101-82 122-48-21-82-66-82-122V84l82-32Z"
+        fill="url(#shieldGlow)"
+        opacity="0.18"
+      />
+      <path
+        d="M160 68 228 95v52c0 46-27 83-68 103-41-20-68-57-68-103V95l68-27Z"
+        fill="none"
+        stroke="url(#shieldGlow)"
+        strokeWidth="6"
+      />
+      <path
+        d="m130 160 20 20 42-48"
+        fill="none"
+        stroke="#f6d38b"
+        strokeWidth="10"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <circle cx="248" cy="92" r="18" fill="#7c5cff" opacity="0.9" />
+      <circle cx="86" cy="228" r="10" fill="#f6d38b" opacity="0.9" />
+    </svg>
+  )
+}
 
 function App() {
   return (
     <main className="page">
       <section className="hero">
-        <div className="eyebrow">SOLVERSAI</div>
-        <h1>
-          Propuesta de sistema de compliance para <span>Valeria Florez</span>
-        </h1>
-        <p className="hero-copy">
-          Una plataforma web enfocada en consulta, validación y screening de
-          personas o entidades frente a listas de cumplimiento, fuentes de riesgo
-          y bases personalizadas.
-        </p>
+        <div className="hero-copy-block">
+          <div className="eyebrow">SOLVERSAI · PROPUESTA COMPLIANCE</div>
+          <h1>
+            Menos riesgo. <span>Más claridad.</span> Más velocidad para decidir.
+          </h1>
+          <p className="hero-copy">
+            Una plataforma para Valeria Florez que convierte búsquedas de
+            compliance en una operación simple, visual y confiable.
+          </p>
 
-        <div className="price-card">
-          <div>
-            <div className="price-label">Inversión de desarrollo</div>
-            <div className="price-row">
-              <span className="price-original">$8.000.000 COP</span>
-              <span className="price-current">$5.000.000 COP</span>
-            </div>
-            <p className="price-note">Precio especial definido para Valeria Florez.</p>
+          <div className="hero-pills">
+            <span>Listas restrictivas</span>
+            <span>Listas personalizadas</span>
+            <span>Due diligence</span>
           </div>
+        </div>
 
-          <div className="divider" />
-
-          <div>
-            <div className="price-label">Gestión mensual</div>
-            <div className="price-current">$1.500.000 COP</div>
-            <p className="price-note">
-              Soporte, mantenimiento operativo y evolución continua.
-            </p>
+        <div className="hero-visual">
+          <ShieldGraphic />
+          <div className="signal-card alert-card">
+            <strong>Problema</strong>
+            <p>Hoy el riesgo se esconde entre fuentes dispersas y procesos lentos.</p>
+          </div>
+          <div className="signal-card solution-card">
+            <strong>Solución</strong>
+            <p>Un solo sistema para consultar, detectar y decidir con confianza.</p>
           </div>
         </div>
       </section>
 
-      <section className="grid two-up">
-        <article className="card">
-          <p className="section-kicker">Objetivo</p>
-          <h2>Centralizar el análisis de riesgo en un solo sistema</h2>
-          <p>
-            El proyecto busca simplificar la validación de personas y entidades,
-            permitiendo consultas rápidas, trazables y listas para operación
-            comercial o de cumplimiento.
-          </p>
-        </article>
-
-        <article className="card emphasis">
-          <p className="section-kicker">Enfoque</p>
-          <h2>Simple, claro y listo para crecer</h2>
-          <p>
-            La primera versión estará enfocada en resolver lo importante: buscar,
-            contrastar, revisar hallazgos y dejar una experiencia sólida para el
-            usuario final.
-          </p>
-        </article>
-      </section>
-
-      <section className="grid two-up lists-section">
-        <article className="card list-card">
-          <p className="section-kicker">Qué podrá hacer el sistema</p>
+      <section className="pas-grid">
+        <article className="pas-card problem">
+          <p className="section-kicker">P</p>
+          <h2>El problema</h2>
           <ul>
-            {features.map((item) => (
+            {painPoints.map((item) => (
               <li key={item}>{item}</li>
             ))}
           </ul>
         </article>
 
-        <article className="card list-card">
-          <p className="section-kicker">Qué incluye esta propuesta</p>
+        <article className="pas-card agitation">
+          <p className="section-kicker">A</p>
+          <h2>Lo que eso cuesta</h2>
+          <p>
+            Cada validación lenta retrasa decisiones, desgasta al equipo y deja
+            espacio para errores que pueden salir caros.
+          </p>
+        </article>
+
+        <article className="pas-card solution">
+          <p className="section-kicker">S</p>
+          <h2>La solución</h2>
           <ul>
-            {deliverables.map((item) => (
+            {solutionPoints.map((item) => (
               <li key={item}>{item}</li>
             ))}
           </ul>
         </article>
       </section>
 
-      <section className="closing">
-        <p className="section-kicker">Siguiente paso</p>
-        <h2>Desplegar una primera versión funcional y empezar a iterar rápido</h2>
-        <p>
-          La propuesta está pensada para lanzar una base sólida, validar el uso
-          real y seguir construyendo sobre una herramienta propia con enfoque en
-          compliance y due diligence.
-        </p>
+      <section className="investment-band">
+        <div className="investment-copy">
+          <p className="section-kicker">Inversión</p>
+          <h2>Oferta directa y clara</h2>
+          <p>
+            Diseñada para cerrar rápido, lanzar una primera versión funcional y
+            seguir iterando sobre una base propia.
+          </p>
+        </div>
+
+        <div className="investment-card featured">
+          <span className="mini-label">Desarrollo</span>
+          <div className="price-row">
+            <span className="price-original">$8.000.000</span>
+            <span className="price-current">$5.000.000 COP</span>
+          </div>
+          <p>Precio especial para Valeria Florez.</p>
+        </div>
+
+        <div className="investment-card">
+          <span className="mini-label">Gestión mensual</span>
+          <div className="price-current small">$1.500.000 COP</div>
+          <p>Soporte, mantenimiento y mejora continua.</p>
+        </div>
+      </section>
+
+      <section className="final-cta">
+        <div>
+          <p className="section-kicker">Resultado esperado</p>
+          <h2>Una herramienta que transmite control, confianza y criterio.</h2>
+        </div>
+        <div className="cta-box">
+          <div className="cta-line" />
+          <p>
+            Si el objetivo es tomar decisiones con más seguridad y menos fricción,
+            esta es la base correcta para empezar.
+          </p>
+        </div>
       </section>
     </main>
   )
