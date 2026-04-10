@@ -20,17 +20,23 @@ const conditionPoints = [
   'Aplicación web propia para operación directa del proceso',
 ]
 
-function OrbitGraphic() {
+function HeroMark() {
   return (
-    <svg viewBox="0 0 420 420" className="hero-graphic" aria-hidden="true">
-      <circle cx="210" cy="210" r="148" fill="none" stroke="rgba(255,255,255,0.1)" strokeWidth="1" />
-      <circle cx="210" cy="210" r="104" fill="none" stroke="rgba(255,255,255,0.08)" strokeWidth="1" />
-      <circle cx="210" cy="210" r="62" fill="rgba(255,255,255,0.05)" />
-      <circle cx="210" cy="210" r="34" fill="none" stroke="rgba(255,255,255,0.92)" strokeWidth="4" />
-      <circle cx="210" cy="106" r="10" fill="rgba(255,255,255,0.9)" />
-      <circle cx="320" cy="210" r="11" fill="rgba(255,255,255,0.4)" />
-      <circle cx="110" cy="280" r="8" fill="rgba(255,255,255,0.25)" />
-      <path d="M210 140v46h44" fill="none" stroke="rgba(255,255,255,0.9)" strokeWidth="6" strokeLinecap="round" />
+    <svg viewBox="0 0 560 560" className="hero-graphic" aria-hidden="true">
+      <defs>
+        <linearGradient id="ring" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stopColor="#ffffff" stopOpacity="1" />
+          <stop offset="100%" stopColor="#bdbdbd" stopOpacity="0.35" />
+        </linearGradient>
+      </defs>
+      <circle cx="280" cy="280" r="172" className="orbit orbit-1" />
+      <circle cx="280" cy="280" r="122" className="orbit orbit-2" />
+      <circle cx="280" cy="280" r="70" className="core" />
+      <path d="M280 176v56h56" className="check-line" />
+      <circle cx="280" cy="118" r="10" className="node node-1" />
+      <circle cx="438" cy="280" r="11" className="node node-2" />
+      <circle cx="162" cy="388" r="8" className="node node-3" />
+      <circle cx="280" cy="280" r="22" fill="none" stroke="url(#ring)" strokeWidth="3" />
     </svg>
   )
 }
@@ -48,10 +54,19 @@ function App() {
             Una plataforma web diseñada para centralizar consultas, detectar
             alertas relevantes y facilitar decisiones con más seguridad.
           </p>
+
+          <div className="hero-actions">
+            <a className="cta primary" href="https://wa.me/573216424600?text=Hola%20Solvers%2C%20quiero%20avanzar%20con%20la%20propuesta%20de%20Valeria%20Florez">
+              WhatsApp
+            </a>
+            <a className="cta secondary" href="tel:+573216424600">
+              Llamar
+            </a>
+          </div>
         </div>
 
         <div className="hero-side">
-          <OrbitGraphic />
+          <HeroMark />
           <div className="hero-side-card">
             <strong>Propuesta Solvers</strong>
             <p>
