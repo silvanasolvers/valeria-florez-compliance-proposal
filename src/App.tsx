@@ -4,10 +4,10 @@ const whatsappHref =
   'https://wa.me/573216424600?text=Hola%20Solvers%2C%20quiero%20avanzar%20con%20la%20propuesta%20de%20Valeria%20Florez'
 
 const capabilities = [
-  'Búsqueda centralizada en listas y fuentes clave',
-  'Reglas internas para revisión y alertas',
-  'Hallazgos claros para decidir más rápido',
-  'Trazabilidad simple para seguimiento',
+  'Consultas ilimitadas para validaciones individuales o masivas',
+  'Procesamiento por listas de nombres para revisión en lote',
+  'Reportes y PDFs estructurados directamente desde el sistema',
+  'Historial de consultas para trazabilidad y seguimiento',
 ]
 
 const processSteps = [
