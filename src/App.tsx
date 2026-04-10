@@ -165,7 +165,7 @@ export default function App() {
                   <div className="note">Acompañamiento y evolución continua</div>
                 </div>
               </div>
-              <p className="base-note">Valor base de referencia: $8.000.000 COP.</p>
+              <p className="base-note">Costo del desarrollo: $8.000.000 COP. Descuento especial para Valeria Florez: $5.000.000 COP.</p>
             </article>
 
             <article className="cta-panel section-card">
@@ -222,7 +222,7 @@ export default function App() {
                 <p className="contact-kicker">Gestión del proyecto</p>
                 <span className="contact-badge">Coordinación</span>
               </div>
-              <h3>Valentina</h3>
+              <h3>Valentina Valdez Pineda</h3>
               <p className="contact-role">Project Manager</p>
               <div className="contact-meta">
                 <a href="mailto:valentina@solversai.com">valentina@solversai.com</a>
